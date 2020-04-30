@@ -14,17 +14,23 @@ class Shop {
   updateQuality() {
     for (let i = 0; i < this.items.length; i++) {
       const item = this.items[i]
+      
       const Max_Quality = 50
       const Min_Quality = 0
+
       let increase_Quality = function (item) {
         if (item.quality < Max_Quality){
           item.quality += 1;
         }
       }
       let decrease_Quality = function (item) {
-        if (item.quality > 0 ){
+        if (item.quality > Min_Quality ){
           item.quality -= 1;
         }
+      }
+
+      let decrease_SellIn = function (item){
+        item.sellIn -= 1;
       }
 
       // This first part of the code is simply just to check if the name is cheese or the concert
@@ -50,13 +56,14 @@ class Shop {
         }
           // This is used to reduces the Selling days by one
       if (item.name != 'Sulfuras, Hand of Ragnaros') {
-        item.sellIn = item.sellIn - 1;
+        decrease_SellIn(item);
       }
 
         // This checks that Aged Brie increases by two after Sellin date is zero
       if (item.sellIn < Min_Quality && item.name == 'Aged Brie'){
         if (item.quality < Max_Quality)
           {increase_Quality(item)}
+          return this.items;
       }
  
       if (item.sellIn < Min_Quality && item.name != 'Aged Brie') {
