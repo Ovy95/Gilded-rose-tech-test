@@ -11,17 +11,18 @@ describe(" BackStagePasses checks the value increase over time", function() {
   })
 
   it("increases the product quality by 2 if sellIn >6  <11   (BACKSTAGEPASSES)", function() {
+    let gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 7, 11)]);
+    let items = gildedRose.updateQuality();
+    expect(items[0].name).toBe("Backstage passes to a TAFKAL80ETC concert")
+    expect(items[0].sellIn).toBe(6)
+    expect(items[0].quality).toBe(13);
+    console.log(items[0])
+  })
+  it("increases the product quality by 3 if sellIn < 6 (BACKSTAGEPASSES)", function() {
     let gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 6, 11)]);
     let items = gildedRose.updateQuality();
     expect(items[0].name).toBe("Backstage passes to a TAFKAL80ETC concert")
     expect(items[0].sellIn).toBe(5)
-    expect(items[0].quality).toBe(13);
-  })
-  it("increases the product quality by 3 if sellIn < 6 (BACKSTAGEPASSES)", function() {
-    let gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 3, 11)]);
-    let items = gildedRose.updateQuality();
-    expect(items[0].name).toBe("Backstage passes to a TAFKAL80ETC concert")
-    expect(items[0].sellIn).toBe(2)
     expect(items[0].quality).toBe(14);
   })
 
