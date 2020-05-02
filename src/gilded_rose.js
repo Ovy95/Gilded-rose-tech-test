@@ -5,7 +5,6 @@ class Item {
     this.quality = quality;
   }
 }
-
 const Max_Quality = 50
 const Min_Quality = 0
 
@@ -13,29 +12,28 @@ class Shop {
   constructor(items=[]){
     this.items = items;
   }
-
   updateQuality() {
     this.items.forEach(updateItemQuality);
   return this.items
   }
 }
 
+
 let updateItemQuality = function(item){
       
       let conjured = function(item){
         return item.name === 'Conjured Mana Cake';
-      }
-
+      };
       let conjured_update = function(item){
           decrease_SellIn(item);
           decrease_Quality(item);
           decrease_Quality(item);
-      }
-
+      };
+    
       let aged_Brie = function(item) {
         return item.name === 'Aged Brie';
       };
-      let update_Aged_Brie = function(item) {
+       let update_Aged_Brie = function(item) {
           
           decrease_SellIn(item);
           increase_Quality(item);
@@ -111,8 +109,7 @@ let updateItemQuality = function(item){
     };
 
 
-
-module.exports = {
-  Item,
-  Shop,
-}
+    module.exports = {
+      Item,
+      Shop,
+    }
