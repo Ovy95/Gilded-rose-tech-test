@@ -6,17 +6,23 @@ class Item {
   }
 }
 
+const Max_Quality = 50
+const Min_Quality = 0
+
 class Shop {
   constructor(items=[]){
     this.items = items;
   }
 
   updateQuality() {
-    for (let i = 0; i < this.items.length; i++) {
-      const item = this.items[i]
+    this.items.forEach(updateItemQuality);
+  return this.items
+  }
+}
 
-      const Max_Quality = 50
-      const Min_Quality = 0
+let updateItemQuality = function(item){
+
+ 
       
       let increase_Quality = function (item) {
         if (item.quality < Max_Quality){
@@ -28,15 +34,46 @@ class Shop {
           item.quality -= 1;
         }
       };
+      let passed_Sellin = function(item) {
+        return item.sellIn < Min_Quality 
+      };
       let decrease_SellIn = function (item){
         item.sellIn -= 1;
       };
       let aged_Brie = function(item) {
         return item.name === 'Aged Brie';
       };
+      let update_Aged_Brie = function(item) {
+          
+          decrease_SellIn(item);
+          increase_Quality(item);
+  
+            if ( (passed_Sellin(item)) ){
+              increase_Quality(item);
+            }
+            return;
+      }
       let concert_tickets = function(item) {
         return item.name === 'Backstage passes to a TAFKAL80ETC concert';
       };
+
+      let update_concert_tickets = function(item) {
+        decrease_SellIn(item);
+        increase_Quality(item);
+
+        if (item.sellIn < 11) {
+           increase_Quality(item);
+          } 
+        if (item.sellIn < 6 ) {
+           increase_Quality(item);
+        };
+
+          if ( (passed_Sellin(item)) ) {
+              item.quality = Min_Quality;
+          }
+          return;
+      }
+      
       let Legendary_Item = function(item) {
         return item.name === 'Sulfuras, Hand of Ragnaros'
       };
@@ -48,42 +85,21 @@ class Shop {
         decrease_Quality(item);
       };
       };
-      
+
       if ( (Legendary_Item(item)) ) {
           return this.items
       };
       
       if (aged_Brie(item)) {
-        decrease_SellIn(item);
-        increase_Quality(item);
-
-          if (item.sellIn < Min_Quality){
-            increase_Quality(item);
-          }
-          return this.items
-        }
+        return update_Aged_Brie(item);
+      };
 
       if (concert_tickets(item) ) {
-          decrease_SellIn(item);
-          increase_Quality(item);
-
-          if (item.sellIn < 11) {
-             increase_Quality(item);
-            } 
-          if (item.sellIn < 6 ) {
-             increase_Quality(item);
-          };
-
-            if (item.sellIn < Min_Quality) {
-                item.quality = Min_Quality;
-            }
-              return this.items
-            }
-           normal_items(item);
+          return update_concert_tickets(item);
+      }
+      normal_items(item);
     };
-    return this.items;
-  }
-}
+   
 
 module.exports = {
   Item,

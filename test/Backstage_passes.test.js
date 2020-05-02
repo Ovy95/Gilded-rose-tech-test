@@ -16,7 +16,6 @@ describe(" BackStagePasses checks the value increase over time", function() {
     expect(items[0].name).toBe("Backstage passes to a TAFKAL80ETC concert")
     expect(items[0].sellIn).toBe(6)
     expect(items[0].quality).toBe(13);
-    console.log(items[0])
   })
   it("increases the product quality by 3 if sellIn < 6 (BACKSTAGEPASSES)", function() {
     let gildedRose = new Shop([new Item("Backstage passes to a TAFKAL80ETC concert", 6, 11)]);
