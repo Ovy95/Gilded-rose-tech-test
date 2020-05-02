@@ -1,4 +1,4 @@
-const {Shop, Item} = require("../src/gilded_rose");
+const {Shop, Item, } = require("../src/gilded_rose");
 
 describe("Checks Aged Brie increases by 1 ", function() {
   it("increases in value of the AGED BRIE by 1", function() {

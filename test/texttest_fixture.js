@@ -1,5 +1,6 @@
 
-const { Shop, Item } = require("../src/gilded_rose");
+const { Shop, Item} = require("../src/gilded_rose");
+
             // (name,    sellIn(days/expires),      quality(value/cost))
 const items = [
   new Item("+5 Dexterity Vest", 10, 20),
