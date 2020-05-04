@@ -1,4 +1,8 @@
 # Gilded Rose
+<div align="center">
+
+[Specification](#Specification) | [Technologies Used](#Technologies-Used ) | [Setup](#Setup) | [Running tests](#Running-tests) | [The Approach to the Guilded Rose](#The-Approach-to-the-Guilded-Rose) |
+</div>
 
 ## Intro to the task
 
@@ -24,12 +28,12 @@ we can begin selling a new category of items. First an introduction to our syste
 We have recently signed a supplier of conjured items. This requires an update to our system:
 - [x] "Conjured" items degrade in Quality twice as fast as normal items
 
-## Technologies used 
+## Technologies Used 
 * JavaScript 
 * Jest
 
 
-## Getting started
+## Setup
 
 Install dependencies
 
