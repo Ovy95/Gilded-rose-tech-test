@@ -1,7 +1,7 @@
 # Gilded Rose
 <div align="center">
 
-[Specification](#Specification) | [Technologies Used](#Technologies-Used ) | [Setup](#Setup) | [Running tests](#Running-tests) | [The Approach to the Guilded Rose](#The-Approach-to-the-Guilded-Rose) |
+[Specification](#Specification) | [Technologies Used](#Technologies-Used ) | [Setup & Testing](#Setup-&-Testing) | [The Approach to the Guilded Rose](#The-Approach-to-the-Guilded-Rose) |
 </div>
 
 ## Intro to the task
@@ -33,15 +33,13 @@ We have recently signed a supplier of conjured items. This requires an update to
 * Jest
 
 
-## Setup
+## Setup & Testing
 
 Install dependencies
 
 ```sh
 npm install
 ```
-
-## Running tests
 
 To run all tests
 
