@@ -1,7 +1,7 @@
 # Gilded Rose
 <div align="center">
 
-[Specification](#Specification) | [Technologies Used](#Technologies-Used ) | [Setup & Testing](#Setup-&-Testing) | [The Approach to the Guilded Rose](#The-Approach-to-the-Gilded-Rose) |
+[Specification](#Specification) | [Technologies Used](#Technologies-Used ) | [Setup & Testing](#Setup-&-Testing) | [The Approach to the Gilded Rose](#The-Approach-to-the-Gilded-Rose) |
 </div>
 
 ## Intro to the task
